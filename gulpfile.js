@@ -8,11 +8,11 @@ var concat = require('gulp-concat');
 
 /* path to resources source & final */
 var path = {
-    src_js_files: './js/**/*.js',
-    src_css_dir: './css',
-    src_css_files: './css/**/*.css',
-    src_js_dir: './js',
-    src_scss_files: './scss/**/*.scss',
+    src_js_files: './js/index.js',
+    src_css_dir: './css/',
+    src_css_files: './css/style.css',
+    src_js_dir: './js/',
+    src_scss_files: './scss/style.scss',
     //dist_dir: 'public_html',
     //dist_css_dir: 'public_html/css',
     //dist_js_dir: 'public_html/js',
@@ -24,7 +24,7 @@ gulp.task('sass', ()=>{
   gulp.src(path.src_scss_files)
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(gulp.dest(path.dist_css_dir));
+    .pipe(gulp.dest(path.src_css_dir));
   console.log('SASS sucess...');
 });
 
@@ -32,7 +32,7 @@ gulp.task('cssmin', function () {
     gulp.src(path.src_css_files)
             .pipe(rename({suffix: '.min'}))
             .pipe(minifycss())
-            .pipe(gulp.dest(path.dist_css_dir));
+            .pipe(gulp.dest(path.src_css_dir));
     console.log('CSS sucess...');
 });
 
@@ -45,5 +45,5 @@ gulp.task('jsmin', function() {
 });
 
 gulp.task('default',() =>{
-    gulp.watch('./scss/style.scss',gulp.series('sass','cssmin','jsmin'));
+    gulp.watch(path.src_scss_files,gulp.series('sass'));
 });

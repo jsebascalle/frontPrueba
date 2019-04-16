@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/jsebascalle/frontPrueba/issues"
   },
-  "homepage": "https://github.com/jsebascalle/frontPrueba#readme"
+  "homepage": "https://github.com/jsebascalle/frontPrueba#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
 }
